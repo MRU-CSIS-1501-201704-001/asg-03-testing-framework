@@ -24,5 +24,5 @@ javac -d bin -cp "bin;." solution/*.java
 javac -d bin -cp "jars/*;bin;." step_definitions/*.java
 
 java -cp "jars/*;bin;" cucumber.api.cli.Main -p html:feature_results --snippets camelcase -g step_definitions features
-::java -cp "jars/*;bin;" cucumber.api.cli.Main --snippets camelcase -g step_definitions features
-call .\sonarlint\bin\sonarlint -Dsonar.java.source=1.8 -Dsonar.java.libraries="jars/*" --src "**/solution/**" --charset "ISO-8859-1" --html-report "style_results/stylereport.htm"
+
+call .\sonarlint\bin\sonarlint -Dsonar.java.source=1.8 -Dsonar.java.libraries="jars/*" --src "**/solution/**.java" --charset "ISO-8859-1" --html-report "style_results/stylereport.htm"
